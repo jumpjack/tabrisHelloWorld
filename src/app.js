@@ -1,13 +1,15 @@
-const {Button, TextView, contentView} = require('tabris');
+import {Button, TextView, contentView} from 'tabris';
 
-new Button({
-  centerX: true, top: 100,
-  text: 'Show message'
-}).onSelect(() => {
-  textView.text = 'Tabris.js rocks!';
-}).appendTo(contentView);
+var loadButton = new Button({
+ text: "Cliccami"
+}).onSelect(testme)
+  .appendTo(contentView);
 
 const textView = new TextView({
-  centerX: true, top: 'prev() 50',
-  font: '24px'
+    font: '24px'
 }).appendTo(contentView);
+
+function testme() {
+  console.log("ok");
+  textView.text = "funziona";
+}
